@@ -25,7 +25,7 @@ This project sets up two Nginx web servers and an HAProxy load balancer using Te
 - Run terraform destroy in the infrastructure/terraform folder to destroy the AWS instances.
 
 ## Project structure
-
+```
 .
 ├── infrastructure
 │   └── terraform
@@ -50,3 +50,4 @@ This project sets up two Nginx web servers and an HAProxy load balancer using Te
             │   └── main.yml
             └── templates
                 └── nginx.conf
+```
