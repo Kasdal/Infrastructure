@@ -26,28 +26,28 @@ This project sets up two Nginx web servers and an HAProxy load balancer using Te
 
 ## Project structure
 ```
-.
-├── infrastructure
-│   └── terraform
-│       ├── main.tf
-│       ├── outputs.tf
-│       └── variables.tf
-└── ansible
-    ├── hosts.ini
-    ├── site.yml
-    └── roles
-        ├── haproxy
-        │   ├── tasks
-        │   │   └── main.yml
-        │   ├── handlers
-        │   │   └── main.yml
-        │   └── templates
-        │       └── haproxy.cfg
-        └── nginx
-            ├── tasks
-            │   └── main.yml
-            ├── handlers
-            │   └── main.yml
-            └── templates
-                └── nginx.conf
+infrastructure/
+  ├── terraform/
+  │   ├── main.tf
+  │   ├── variables.tf
+  │   └── outputs.tf
+  ├── ansible/
+  │   ├── roles/
+  │   │   ├── haproxy/
+  │   │   │   ├── tasks/
+  │   │   │   │   └── main.yml
+  │   │   │   ├── handlers/
+  │   │   │   │   └── main.yml
+  │   │   │   └── templates/
+  │   │   │       └── haproxy.cfg
+  │   │   └── nginx/
+  │   │       ├── tasks/
+  │   │       │   └── main.yml
+  │   │       ├── handlers/
+  │   │       │   └── main.yml
+  │   │       └── templates/
+  │   │           └── nginx.conf
+  │   ├── hosts.ini
+  │   └── site.yml
+  └── README.md
 ```
