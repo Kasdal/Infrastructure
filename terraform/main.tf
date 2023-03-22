@@ -65,6 +65,6 @@ resource "null_resource" "ansible" {
 
   provisioner "local-exec" {
     working_dir = "/home/kasdal/Infrastructure/ansible"
-    command     = "ansible-playbook -i hosts.ini site.yml --private-key=new_key --vault-password-file /home/kasdal/Infrastructure/ansible/pwd.txt"
+    command     = "ansible-playbook -i hosts.ini site.yml --private-key=new_key"
   }
 }
