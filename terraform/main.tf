@@ -61,9 +61,10 @@ resource "null_resource" "update_hosts_file" {
 }
 
 resource "null_resource" "ansible" {
-provisioner "local-exec" {
+  depends_on = [null_resource.update_hosts_file]
 
-  working_dir = "/home/kasdal/Infrastructure/ansible"
-  command = "ansible-playbook -i hosts.ini site.yml --private-key=new_key"
-}
+  provisioner "local-exec" {
+    working_dir = "/home/kasdal/Infrastructure/ansible"
+    command     = "ansible-playbook -i hosts.ini site.yml --private-key=new_key"
+  }
 }
