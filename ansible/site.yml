@@ -1,0 +1,14 @@
+---
+- name: Configure HAProxy
+  hosts: haproxy
+  become: yes
+  vars:
+    nginx_servers: "{{ groups['nginx_servers'] }}"
+  roles:
+    - haproxy
+
+- name: Configure Nginx
+  hosts: nginx_servers
+  become: yes
+  roles:
+    - nginx

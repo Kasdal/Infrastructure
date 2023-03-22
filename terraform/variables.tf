@@ -13,5 +13,5 @@ variable "instance_type" {
 variable "key_pair" {
   type        = string
   description = "Name of the key pair to use for SSH access"
-  default = "lab-key"
+  default = "new-key"
 }
