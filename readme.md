@@ -12,7 +12,7 @@ This project sets up two Nginx web servers and an HAProxy load balancer using Te
 
 - Clone this repository and navigate to the root directory.
 - Run terraform init and terraform apply in the infrastructure/terraform folder to create the AWS instances.
-- Replace <haproxy_public_ip_from_terraform>, <nginx1_public_ip_from_terraform>, and <nginx2_public_ip_from_terraform> in ansible/hosts.ini with the actual public IP addresses from the Terraform output.
+- Terraform local exec will populate hosts.ini with the instance ip-s 
 - Run ansible-playbook -i ansible/hosts.ini ansible/site.yml to configure the instances with HAProxy and Nginx.
 
 ## Testing
