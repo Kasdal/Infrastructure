@@ -56,7 +56,14 @@ resource "null_resource" "update_hosts_file" {
   depends_on = [aws_instance.haproxy, aws_instance.nginx]
 
   provisioner "local-exec" {
-    command = "echo '[haproxy]\n${aws_instance.haproxy.public_ip}\n\n[nginx]' > ../ansible/hosts.ini && echo '${aws_instance.nginx[0].public_ip}\n${aws_instance.nginx[1].public_ip}' >> ../ansible/hosts.ini"
+    command = "echo '[haproxy]\n${aws_instance.haproxy.public_ip}\n\n[nginx_servers]' > ../ansible/hosts.ini && echo '${aws_instance.nginx[0].public_ip}\n${aws_instance.nginx[1].public_ip}' >> ../ansible/hosts.ini"
   }
 }
 
+resource "null_resource" "ansible" {
+provisioner "local-exec" {
+
+  working_dir = "/home/kasdal/Infrastructure/ansible"
+  command = "ansible-playbook -i hosts.ini site.yml --private-key=new_key"
+}
+}

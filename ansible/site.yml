@@ -1,4 +1,12 @@
 ---
+- name: Wait for 2.5 minutes before running the rest of the script
+  hosts: all
+  gather_facts: no
+  tasks:
+    - name: Pause for 2.5 minutes
+      ansible.builtin.pause:
+        minutes: 2.5
+
 - name: Configure HAProxy
   hosts: haproxy
   become: yes
