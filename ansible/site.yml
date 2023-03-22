@@ -10,8 +10,8 @@
 - name: Configure HAProxy
   hosts: haproxy
   become: yes
-  vars:
-    nginx_servers: "{{ groups['nginx_servers'] }}"
+  vars_files:
+    - vault.yml
   roles:
     - haproxy
 
