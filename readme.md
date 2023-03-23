@@ -26,28 +26,36 @@ This project sets up two Nginx web servers and an HAProxy load balancer using Te
 
 ## Project structure
 ```
-infrastructure/
-  ├── terraform/
-  │   ├── main.tf
-  │   ├── variables.tf
-  │   └── outputs.tf
-  ├── ansible/
-  │   ├── roles/
-  │   │   ├── haproxy/
-  │   │   │   ├── tasks/
-  │   │   │   │   └── main.yml
-  │   │   │   ├── handlers/
-  │   │   │   │   └── main.yml
-  │   │   │   └── templates/
-  │   │   │       └── haproxy.cfg
-  │   │   └── nginx/
-  │   │       ├── tasks/
-  │   │       │   └── main.yml
-  │   │       ├── handlers/
-  │   │       │   └── main.yml
-  │   │       └── templates/
-  │   │           └── nginx.conf
-  │   ├── hosts.ini
-  │   └── site.yml
-  └── README.md
+.
+├── ansible
+│   ├── ansible.cfg
+│   ├── hosts.ini
+│   ├── new_key
+│   ├── new_key.pub
+│   ├── pwd.txt
+│   ├── roles
+│   │   ├── haproxy
+│   │   │   ├── handlers
+│   │   │   │   └── main.yml
+│   │   │   ├── tasks
+│   │   │   │   └── main.yml
+│   │   │   └── templates
+│   │   │       └── haproxy.cfg
+│   │   └── nginx
+│   │       ├── handlers
+│   │       │   └── main.yml
+│   │       ├── tasks
+│   │       │   └── main.yml
+│   │       └── templates
+│   │           └── nginx.conf
+│   ├── site.yml
+│   └── vault.yml
+├── readme.md
+└── terraform
+    ├── main.tf
+    ├── new-key.pem
+    ├── outputs.tf
+    ├── terraform.tfstate
+    ├── terraform.tfstate.backup
+    └── variables.tf
 ```
